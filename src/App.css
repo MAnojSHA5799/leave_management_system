@@ -1,13 +1,11 @@
 .App {
+ /* Center vertically */
+  min-height: 100vh; /* Set a minimum height to cover the entire viewport */
   background-image: url("close-up-briefcase.jpg");
-  background-size: cover; /* This property makes sure the background image covers the entire container */
-  background-repeat: no-repeat;
-  background-position: center; /* Center the background image */
+  background-size: cover;
+  background-position: center;
   /* Optionally, you can set a background color */
   /* background-color: #f0f0f0; */
-  /* Set the width and height of the container to cover the entire screen */
-  width: 100vw;
-  height: 100vh;
 }
 
 /* .App-logo {

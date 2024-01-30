@@ -17,7 +17,7 @@
 
 .text{
     text-align: center;
-    background-color: #23375C;
+    /* background-color: #23375C; */
     padding-top: 4px;
     padding-bottom: 10px;
     margin-bottom: 0;
@@ -71,3 +71,11 @@
  height: 100%;
  width: 100%;
 }
+.main {
+    /* display: flex; */
+    align-items: center;
+    margin-right: px;
+    /* justify-content: center;
+    height: 100vh;
+    background-color: #E55A1B; */
+  }
