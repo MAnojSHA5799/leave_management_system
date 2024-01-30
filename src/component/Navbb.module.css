@@ -1,0 +1,15 @@
+.circle{
+    display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+}
+
+.circle input{
+width: 200px;
+height: 200px;
+border-radius: 50%;
+text-align: center;
+font-size: 40px;
+border: dotted;
+}

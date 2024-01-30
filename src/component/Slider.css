@@ -1,0 +1,47 @@
+.aaaa{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 64%;
+    background-image: url(beginners-and-experienced.jpg);
+}
+
+
+.ff{
+    display: inline-block;
+    padding-left: 60px;
+    height: 224px;
+    width: 791px;
+    text-align: -webkit-center;
+}
+
+.logoo{
+    width: 100px;
+    float: left;
+}
+
+.logo1{
+    width:100%;
+    opacity: 0.5;
+}
+
+.text-block {
+    /* position: absolute; */
+    bottom: 20px;
+    right: 20px;
+    background-color: dimgray;
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .container {
+    position: relative;
+    font-family: Arial;
+  }
+
+  .vv{
+    width: 500px;
+    padding-left: 110px;
+    vertical-align: middle;
+  }

@@ -1,0 +1,42 @@
+.loginform{  
+box-sizing: border-box;
+text-align: center;
+display: flex;
+flex-direction: column;
+flex-basis: content;
+}
+
+.loginform input{
+  width: 25%;
+  align-self: center;
+  padding-top: 1%;
+  margin-top: 30px;
+  border: 2px solid black;
+  border-radius: 10px;
+}
+
+.loginform button{
+  align-content: center;
+  background-color: #E55A1B;
+  border: none;
+  margin: 6px;
+  color: white;
+  height: 15%;
+  padding: 10px;
+  width: 25%;
+  align-self: center;
+  margin-top: 30px;
+}
+
+.midtext{
+  text-align: center;
+  color: #f95e04;
+}
+
+.midtext a{
+  margin-bottom: 5%;
+}
+
+.hchild{
+  width: 8%;
+}

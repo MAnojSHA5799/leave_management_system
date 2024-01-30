@@ -1,0 +1,84 @@
+/* Default styles */
+.logo {
+    width: 8%;
+    margin-bottom: 10px;
+}
+
+.headerbutton {
+    background-color: #E55A1B;
+    border: none;
+    margin: 6px;
+    color: white;
+    height: 15%;
+    padding: 10px;
+    margin-top: 10px;
+    float: right;
+}
+
+.hbutton:hover {
+    opacity: 0.4;
+}
+
+.downarea {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding-top: 40px;
+}
+
+.downarea img {
+    max-width: 40%;
+    height: auto;
+}
+
+.downarea p {
+    text-align: center;
+    margin-right: 70px;
+    color: #f4ebeb;
+}
+
+.text2 {
+    font-size: 1.5em;
+    color: #0d62ad;
+    text-align: center;
+    margin-top: 40px;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.big {
+    font-size: 3em;
+    color: #faf5f5;
+}
+
+.text2 a {
+    margin-bottom: 2%;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+    .logo {
+        width: 15%; /* Adjust as needed for smaller screens */
+    }
+
+    .headerbutton {
+        float: none;
+        margin: 10px auto;
+        margin-right: 10px;
+    }
+
+    .downarea {
+        flex-direction: column;
+        text-align: center;
+        
+    }
+
+    .downarea img {
+        max-width: 80%;
+        margin-bottom: 20px;
+    }
+
+    .downarea p {
+        margin-right: 0;
+    }
+}

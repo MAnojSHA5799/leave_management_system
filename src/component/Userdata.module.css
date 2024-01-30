@@ -1,0 +1,73 @@
+.logo{
+    width: 8%;
+    max-width: 40%;
+    margin-bottom: 10px;
+}
+
+.headerbutton{
+    background-color: #E55A1B;
+    border: none;
+    margin: 6px;
+    color: white;
+    height: 15%;
+    padding: 10px;
+    margin-top: 10px;
+    float: right;
+} 
+
+.text{
+    text-align: center;
+    background-color: #23375C;
+    padding-top: 4px;
+    padding-bottom: 10px;
+    margin-bottom: 0;
+    color: white;
+}
+
+.inputfield{
+    height: 400px;
+    background-color: white;
+}
+
+.inputfield label{
+    background-color: #e9f6fe;
+    border: 1px solid black; 
+    padding-right: 40px;
+    width: 400px;
+    margin-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.inputfield input{
+    width: 400px;
+    margin-left: 10px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+
+.inputfield select{
+    width: 200px;
+    margin-left: 10px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+
+.inputfield button{
+    color: white;
+    background-color: #23375C;
+    padding: 8px 8px 8px 8px;
+    border: none;
+    margin-top: 20px;
+    float: right;
+    margin-right: 20px;
+}
+
+.alignn {
+    margin-left: 10px;
+}
+
+.fullimage{
+ height: 100%;
+ width: 100%;
+}

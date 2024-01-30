@@ -1,0 +1,40 @@
+.header{
+background-color: #E55A1B;
+}
+
+.header th{
+padding: 8px 8px 8px 8px; 
+color: rgb(13, 1, 1);
+text-align: center;
+}
+
+.textalig td{
+    text-align: center;
+    border: 2px solid rgb(18, 135, 237);
+    color: #f9f7f7;
+}
+
+.heading h1{
+    text-align: center;
+    background-color: #23375C;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    color: white;
+}
+
+.logo{
+    width: 8%;
+    max-width: 40%;
+    margin-bottom: 10px;
+}
+
+.headerbutton{
+    background-color: #E55A1B;
+    border: none;
+    margin: 6px;
+    color: white;
+    height: 15%;
+    padding: 10px;
+    margin-top: 10px;
+    float: right;
+} 
