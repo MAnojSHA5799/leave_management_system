@@ -15,7 +15,7 @@ function Adminuserdata() {
     console.log("log: " + { Status });
     let data = { "Status": status, id };
 
-    fetch(`http://localhost:5000/approved`, {
+    fetch(`https://leave-management-backend-lilac.vercel.app/approved`, {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
@@ -54,7 +54,7 @@ function Adminuserdata() {
   useEffect(() => {
     const token = localStorage.getItem("token");
     console.log({ token });
-    fetch(`http://localhost:5000/admindone`, {
+    fetch(`https://leave-management-backend-lilac.vercel.app/admindone`, {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -119,19 +119,19 @@ function Adminuserdata() {
                     <td> {formattedTime} </td>
                     <td> {formattedTime1} </td>
                     <td> {diff} </td>
-                    <td> {item.Status} </td>
+                    <td> {item.status} </td>
                     <td>
                       <Button
-                        variant="danger"
-                        disabled={item.Status}
+                        variant="success"
+                        disabled={item.status == "Approved"}
                         onClick={() => saveUser(item.id, "Approved")}
                       >
                         Approved
                       </Button>
                       <Button
                        style={{ marginLeft: '10px' }}
-                        variant="success"
-                        disabled={item.Status}
+                        variant="danger"
+                        disabled={item.status == "Deny"}
                         onClick={() => saveUser(item.id, "Deny")}
                       >
                         Deny

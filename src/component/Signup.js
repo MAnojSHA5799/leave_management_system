@@ -16,7 +16,7 @@ function Signup() {
     console.warn({ firstname, lastname, email, password, phonenumber, dob });
     let data = { firstname, lastname, email, password, phonenumber, dob };
 
-    fetch("http://localhost:5000/sign", {
+    fetch("https://leave-management-backend-lilac.vercel.app/sign", {
       method: "POST",
       headers: {
         Accept: "application/json",

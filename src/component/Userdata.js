@@ -43,7 +43,7 @@ console.warn({leavetype,name,empcode,startdate,enddate,email,notes});
 console.log("log: "+{leavetype,name,empcode,startdate,enddate,email,notes});
 let data = {leavetype,name,empcode,startdate,enddate,email,notes}
 
-fetch("http://localhost:5000/mark",{
+fetch("https://leave-management-backend-lilac.vercel.app/mark",{
     method:'POST',
     headers:{
         'Accept':'application/json',

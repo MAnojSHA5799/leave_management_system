@@ -37,13 +37,13 @@ function Holiday() {
   useEffect(() => {
     const token = localStorage.getItem("token");
     console.log({ token });
-    fetch("http://localhost:5000/done", {
+    fetch("https://leave-management-backend-lilac.vercel.app/done", {
       method: "POST",
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ token: token }),
+       body: JSON.stringify({ token: token }),
     })
       .then((resp) => {
         return resp.json();
@@ -99,7 +99,7 @@ const diff = days(formattedTime,formattedTime1);
                 <td> {formattedTime} </td>
                 <td> {formattedTime1} </td>
                 <td> {diff} </td>
-                <td> {item.Status} </td>
+                <td> {item.status} </td>
                  <br></br>
                 <br></br>
                 <br></br>
