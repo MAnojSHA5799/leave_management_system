@@ -13,6 +13,10 @@ function Signup() {
   const [dob, SetDob] = useState("");
 
   function saveUser() {
+    if (!firstname || !lastname || !email || !password || !phonenumber || !dob) {
+      alert("All fields are required");
+      return;
+    }
     console.warn({ firstname, lastname, email, password, phonenumber, dob });
     let data = { firstname, lastname, email, password, phonenumber, dob };
 
@@ -46,12 +50,13 @@ function Signup() {
       <img src="Logo.png" className={Styles.hchild} alt="Logo Image" />
      
       <div className={Styles.maintext}>
-        <h2> <b> Sign Up </b> </h2>
-        <p>Please fill in this form to create an account</p>
+        <h2  style={{ color: 'white' }}> <b> Sign Up </b> </h2>
+        <p style={{ color: 'white' }}>Please fill in this form to create an account</p>
             <input
               type="text" placeholder="First name" 
               value={firstname}
               autoComplete="off"
+              required
               onChange={(e) => {
                 SetFirstname(e.target.value);
               }}
@@ -61,6 +66,7 @@ function Signup() {
             <input
               type="text" placeholder="Last name"
               value={lastname}
+              required
               autoComplete="off"
               onChange={(e) => {
                 SetLastname(e.target.value);
@@ -71,6 +77,7 @@ function Signup() {
             <input
               type="text" placeholder="Email"
               value={email}
+              required
               autoComplete="off"
               onChange={(e) => {
                 SetEmail(e.target.value);
@@ -80,6 +87,7 @@ function Signup() {
             <input
               type="password" placeholder="password"
               value={password}
+              required
               autoComplete="off"
               onChange={(e) => {
                 SetPassword(e.target.value);
@@ -90,6 +98,7 @@ function Signup() {
             <input
               type="tel" placeholder="Phone Number"
               value={phonenumber}
+              required
               autoComplete="off"
               onChange={(e) => {
                 SetPhonenumber(e.target.value);
@@ -101,6 +110,7 @@ function Signup() {
               type="date"
               value={dob}
               autoComplete="off"
+              required
               onChange={(e) => {
                 SetDob(e.target.value);
               }}
@@ -112,8 +122,8 @@ function Signup() {
                 Signup
               </button>
             
-            <p className="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-              Already have an account?<Link to="/Login"> Login Here</Link>
+            <p className="d-flex justify-content-center mx-4 mb-3 mb-lg-4" style={{ color: 'white' }}>
+              Already have an account ?<Link to="/Login"> Login Here</Link>
             </p>
             </div>
     </>
