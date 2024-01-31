@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import moment from "moment";
 import { useNavigate } from "react-router-dom";
 import Styles from "./Holiday.module.css"
-
+import { Container, Row, Col, Button, Form,Table } from 'react-bootstrap';
 function Holiday() {
   const navigate = useNavigate();
 
@@ -71,43 +71,49 @@ function Holiday() {
       <button className={Styles.headerbutton} onClick={logs}> Logout </button>
       <button className={Styles.headerbutton} onClick={logadmin}> Apply Leave </button>
       </div>
-      <div className={Styles.heading}>
-
-        <h1 className="text-center">Leave Portal</h1>
-        <table className="table">
-          <tr className={Styles.header}>
-            <th>Name</th>
-            <th>Leave type</th>
-            <th>Emplcode</th>
-            <th>Start date</th>
-            <th>End date</th>
-            <th>Days of Leave</th>
-            <th>Status</th>
-          </tr>
-          
-          {RESPS.map((item) => {
-            let formattedTime = moment(item.startdate).format("MM/DD/YYYY");
-            let formattedTime1 = moment(item.enddate).format("MM/DD/YYYY");
-const diff = days(formattedTime,formattedTime1);
-            let calc = abcd(item.leavetype)
-           
-            return (
-              <tr className={Styles.textalig}>
-                <td> {item.name} </td>
-                <td> {item.leavetype} </td>
-                <td> {item.empcode} </td>
-                <td> {formattedTime} </td>
-                <td> {formattedTime1} </td>
-                <td> {diff} </td>
-                <td> {item.status} </td>
-                 <br></br>
-                <br></br>
-                <br></br>
+      <Container className={`mt-3 ${Styles.heading}`}>
+      <Row className="justify-content-center">
+        <Col md={12} xs={12}>
+          <div className={`p-3 rounded border ${Styles.heading}`}>
+            <h3 className="text-center" style={{ color: 'white' }}>Leave Portal</h3>
+            <table className={`table ${Styles.textalig}`} style={{ background: 'black' }}>
+              <thead className={Styles.header} >
+                <tr>
+                  <th >Name</th>
+                  <th>Leave type</th>
+                  <th>Emp Code</th>
+                  <th>Start date</th>
+                  <th>End date</th>
+                  <th>Days of Leave</th>
+                  <th>Status</th>
                 </tr>
-            );
-          })}
-        </table>
-      </div>
+              </thead>
+              <tbody>
+                {/* Replace RESPS with your actual data array */}
+                {RESPS.map((item) => {
+                  let formattedTime = moment(item.startdate).format('MM/DD/YYYY');
+                  let formattedTime1 = moment(item.enddate).format('MM/DD/YYYY');
+                  const diff = days(formattedTime, formattedTime1);
+                  let calc = abcd(item.leavetype);
+
+                  return (
+                    <tr key={item.id}>
+                      <td>{item.name}</td>
+                      <td>{item.leavetype}</td>
+                      <td>{item.empcode}</td>
+                      <td>{formattedTime}</td>
+                      <td>{formattedTime1}</td>
+                      <td>{diff}</td>
+                      <td>{item.status}</td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
+        </Col>
+      </Row>
+    </Container>
     </>
   );
 }

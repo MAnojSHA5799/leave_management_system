@@ -1,4 +1,5 @@
 import './App.css';
+import './index.css'
 import About from './component/About';
 import Login from './component/Login';
 import Holiday from './component/Holiday';

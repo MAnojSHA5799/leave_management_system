@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import moment from "moment";
 import { useNavigate } from "react-router-dom";
-import { Button } from "react-bootstrap";
+import { Button, Table, Card, Row, Col } from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Adminuserdata() {
@@ -9,11 +9,11 @@ function Adminuserdata() {
   const [Status, SetStatus] = useState("Approved");
   const [Deny, SetDeny] = useState("Deny");
 
-  const saveUser = (id, status) => {
+  const saveUser = (id, status,item,userdata) => {
     
-    console.warn({ Status });
+    console.warn({ id, status,item,userdata });
     console.log("log: " + { Status });
-    let data = { "Status": status, id };
+    let data = { "Status": status, id , item, userdata  };
 
     fetch(`https://leave-management-backend-lilac.vercel.app/approved`, {
       method: 'POST',
@@ -91,9 +91,10 @@ function Adminuserdata() {
         <Button variant="danger" onClick={logs}> Logout </Button>
         <div>
           
-<h3 className="text-center">Admin Login</h3>
-
-          <table className="table table-bordered text-center">
+<h3 className="text-center" style={{ color: 'white' }}>Admin Login</h3>
+<div className="table-responsive">
+            <Table className="table-bordered text-center" responsive>
+          {/* <table className="table table-bordered text-center"> */}
             <thead>
               <tr>
                 <th>Name</th>
@@ -125,7 +126,8 @@ function Adminuserdata() {
                       <Button
                         variant="success"
                         disabled={item.status == "Approved"}
-                        onClick={() => saveUser(item.id, "Approved")}
+                        onClick={() => saveUser(item.id, "Approved",item.email,item
+                        )}
                       >
                         Approved
                       </Button>
@@ -133,7 +135,8 @@ function Adminuserdata() {
                        style={{ marginLeft: '10px' }}
                         variant="danger"
                         disabled={item.status == "Deny"}
-                        onClick={() => saveUser(item.id, "Deny")}
+                        onClick={() => saveUser(item.id, "Deny",item.email,item
+                        )}
                       >
                         Deny
                       </Button>
@@ -142,9 +145,13 @@ function Adminuserdata() {
                 );
               })}
             </tbody>
-          </table>
+          {/* </table> */}
+          </Table>
+          
+          </div>
         </div>
       </div>
+      
     </>
   );
 }

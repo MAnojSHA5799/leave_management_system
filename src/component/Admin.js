@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom"; 
-import { Form, Button } from 'react-bootstrap';
+import { Form, Button,  Container, Row, Col, } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Login.css';
 
@@ -39,27 +39,46 @@ function Admin() {
   return (
     <>
       <a href="./"><img src="Logo.png" href="./About" className="hchild" alt="Logo Image" /></a>
-      <div className="loginform">
-        <h3 className="text-center" style={{ color: 'white' }}>Admin Login</h3>
-        <div className="p-3 rounded border">
-        <Form>
-          <Form.Group controlId="formBasicEmail">
-            <Form.Label>Email address</Form.Label>
-            <Form.Control type="text" value={emailadmin} placeholder="Enter your email" autoComplete="off" onChange={(e) => { setEmailadmin(e.target.value) }} name="emailadmin" />
-          </Form.Group>
+      <Container className="mt-3">
+      <Row className="justify-content-center">
+        <Col md={6} xs={12}>
+          <div className="p-3 rounded border">
+            <h3 className="text-center" style={{ color: 'white' }}>Admin Login</h3>
+            <Form>
+              <Form.Group controlId="formBasicEmail">
+                <Form.Label>Email address</Form.Label>
+                <Form.Control
+                  type="text"
+                  value={emailadmin}
+                  placeholder="Enter your email"
+                  autoComplete="off"
+                  onChange={(e) => setEmailadmin(e.target.value)}
+                  name="emailadmin"
+                />
+              </Form.Group>
 
-          <Form.Group controlId="formBasicPassword">
-            <Form.Label>Password</Form.Label>
-            <Form.Control type="password" value={passwordadmin} placeholder="Enter your password" autoComplete="off" onChange={(e) => { setPasswordadmin(e.target.value) }} name="passwordadmin" />
-          </Form.Group>
-          <Form.Group controlId="formSignUpButton" className="text-center">
-          <Button variant="primary" type="button" onClick={enteruser} className="btn-1">
-            Login
-          </Button>
-          </Form.Group>
-        </Form>
-        </div>
-      </div>
+              <Form.Group controlId="formBasicPassword">
+                <Form.Label>Password</Form.Label>
+                <Form.Control
+                  type="password"
+                  value={passwordadmin}
+                  placeholder="Enter your password"
+                  autoComplete="off"
+                  onChange={(e) => setPasswordadmin(e.target.value)}
+                  name="passwordadmin"
+                />
+              </Form.Group>
+
+              <Form.Group controlId="formSignUpButton" className="text-center">
+                <Button type="button" onClick={enteruser} className="btn-1 mt-2 " style={{ backgroundColor: '#E55A1B' , border: 'none'}}>
+                  Login
+                </Button>
+              </Form.Group>
+            </Form>
+          </div>
+        </Col>
+      </Row>
+    </Container>
       
     </>
   );

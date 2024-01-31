@@ -11,3 +11,14 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.headerbutton{
+  background-color: #E55A1B;
+  border: none;
+  margin: 6px;
+  color: white;
+  height: 15%;
+  padding: 10px;
+  margin-top: 10px;
+  float: right;
+} 

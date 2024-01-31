@@ -7,11 +7,10 @@ padding: 8px 8px 8px 8px;
 color: rgb(13, 1, 1);
 text-align: center;
 }
-
 .textalig td{
     text-align: center;
-    border: 2px solid rgb(18, 135, 237);
-    color: #f9f7f7;
+    border: 2px solid rgb(161, 165, 168);
+    color: #ea2222;
 }
 
 .heading h1{

@@ -2,12 +2,18 @@ import React, { useState, useEffect } from 'react';
 import { Button, Form, Container, Row, Col } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import Styles from './Userdata.module.css';
-
+import { useLocation } from 'react-router-dom';
+import '../index.css'
+import { useHistory } from 'react-router-dom';
 function Userdata() {
+  const location = useLocation();
+  const userData = location.state.userData[0];
+  console.log(userData)
   const navigate = useNavigate();
-
+  const [validationError, setValidationError] = useState('');
   const [leavetype, setLeavetype] = useState('');
   const [name, setName] = useState('');
+
   const [empcode, setEmpcode] = useState('');
   const [startdate, setStartdate] = useState('');
   const [enddate, setEnddate] = useState('');
@@ -33,10 +39,20 @@ function Userdata() {
   useEffect(() => {
     if (!localStorage.getItem('token')) {
       navigate('/Login');
+
+      if (userData) {
+        setName(userData.firstname + ' ' + userData.lastname);
+        setEmail(userData.email);
+      }
     }
-  }, []);
+  }, [userData, navigate]);
 
   function saveUser() {
+    setValidationError('');
+    if (!leavetype || !name || !empcode || !startdate || !enddate || !email || !notes) {
+      setValidationError('Please fill in all required fields.');
+      return;
+    }
     console.warn({ leavetype, name, empcode, startdate, enddate, email, notes });
     console.log('log: ', { leavetype, name, empcode, startdate, enddate, email, notes });
     let data = { leavetype, name, empcode, startdate, enddate, email, notes };
@@ -65,10 +81,10 @@ function Userdata() {
     <>
       <div className={Styles.heading}>
         <img src="Logo.png" className={Styles.logo} alt="Logo Image" />
-        <Button className={Styles.headerbutton} onClick={logs}>
+        <Button className="headerbutton" style={{ backgroundColor: '#E55A1B' , border: 'none'}} onClick={logs}>
           Logout
         </Button>
-        <Button className={Styles.headerbutton} onClick={logadmin}>
+        <Button className='headerbutton' style={{ backgroundColor: '#E55A1B', border: 'none'}} onClick={logadmin}>
           Leave Portal
         </Button>
       </div>
@@ -77,7 +93,9 @@ function Userdata() {
         <Container className={Styles.main}>
           <Row className="justify-content-center">
             <Col xs={12} md={8} className={Styles.textarea}>
+            <div className="p-3 rounded border">
               <h3 className={Styles.text}>Apply for Leave</h3>
+              {validationError && <p className="text-danger">{validationError}</p>}
               <Form>
                 <Form.Group controlId="leavetype">
                   <Form.Label>Type of Leave:</Form.Label>
@@ -93,6 +111,8 @@ function Userdata() {
                 <Form.Group controlId="name">
                   <Form.Label>Employee Name:</Form.Label>
                   <Form.Control type="text" value={name} placeholder="Employee Name" onChange={(e) => setName(e.target.value)} />
+                  {/* <Form.Control type="text" value={userData.firstname + ' ' + userData.lastname || ''} placeholder="Employee Name" onChange={(e) => setName(e.target.value)} /> */}
+                  {/* {console.log(name)} */}
                 </Form.Group>
 
                 <Form.Group controlId="empcode">
@@ -121,10 +141,11 @@ function Userdata() {
                 </Form.Group>
 
                
-                <Button type="button" onClick={saveUser} className="w-10 mx-auto d-block mt-3">
+                <Button type="button" onClick={saveUser} className="w-10 mx-auto d-block mt-3" style={{ backgroundColor: '#E55A1B' , border: 'none'}}>
                   Submit Leave Application
                 </Button>
               </Form>
+              </div>
             </Col>
           </Row>
         </Container>
