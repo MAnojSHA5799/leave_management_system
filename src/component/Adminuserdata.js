@@ -10,7 +10,7 @@ function Adminuserdata() {
   const [Deny, SetDeny] = useState("Deny");
 
   const saveUser = (id, status) => {
-    window.location.reload();
+    
     console.warn({ Status });
     console.log("log: " + { Status });
     let data = { "Status": status, id };
@@ -25,6 +25,7 @@ function Adminuserdata() {
     }).then((result) => {
       console.warn("resulting", result);
       if (result.status === 200) {
+        window.location.reload();
         alert("Response Sent");
       } else {
         alert("Please enter valid details");
