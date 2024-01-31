@@ -2,6 +2,8 @@
  /* Center vertically */
   min-height: 100vh; /* Set a minimum height to cover the entire viewport */
   background-image: url("close-up-briefcase.jpg");
+  /* background-image: url("close-up-briefcase.jpg"); */
+
   background-size: cover;
   background-position: center;
   /* Optionally, you can set a background color */

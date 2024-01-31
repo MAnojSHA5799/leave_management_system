@@ -19,7 +19,7 @@ function About() {
   }, []);
 
   const handleClick = () => {
-    window.open("https://www.blitzlearning.in/");
+    window.open("https://biltz-learning.vercel.app/");
   };
 
   return (
