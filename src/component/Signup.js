@@ -23,7 +23,7 @@ function Signup() {
     console.warn({ firstname, lastname, email, password, phonenumber, dob });
     let data = { firstname, lastname, email, password, phonenumber, dob };
 
-    fetch("http://localhost:5000/sign", {
+    fetch("https://leave-management-backend-yeyj.onrender.com/sign", {
       method: "POST",
       headers: {
         Accept: "application/json",

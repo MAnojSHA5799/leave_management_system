@@ -15,7 +15,7 @@ function Admin() {
     console.warn({ emailadmin, passwordadmin });
     let data = { emailadmin, passwordadmin };
 
-    fetch("http://localhost:5000/admin", {
+    fetch("https://leave-management-backend-yeyj.onrender.com/admin", {
       method: 'POST',
       headers: {
         'Accept': 'application/json',

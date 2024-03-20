@@ -15,7 +15,7 @@ function Adminuserdata() {
     console.log("log: " + { Status });
     let data = { "Status": status, id , item, userdata  };
 
-    fetch(`http://localhost:5000/approved`, {
+    fetch(`https://leave-management-backend-yeyj.onrender.com/approved`, {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
@@ -55,7 +55,7 @@ function Adminuserdata() {
   useEffect(() => {
     const token = localStorage.getItem("token");
     console.log({ token });
-    fetch(`http://localhost:5000/admindone`, {
+    fetch(`https://leave-management-backend-yeyj.onrender.com/admindone`, {
       method: "POST",
       headers: {
         Accept: "application/json",
