@@ -15,7 +15,7 @@ function Adminuserdata() {
     console.log("log: " + { Status });
     let data = { "Status": status, id , item, userdata  };
 
-    fetch(`https://leave-management-backend-lilac.vercel.app/approved`, {
+    fetch(`http://localhost:5000/approved`, {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
@@ -55,7 +55,7 @@ function Adminuserdata() {
   useEffect(() => {
     const token = localStorage.getItem("token");
     console.log({ token });
-    fetch(`https://leave-management-backend-lilac.vercel.app/admindone`, {
+    fetch(`http://localhost:5000/admindone`, {
       method: "POST",
       headers: {
         Accept: "application/json",

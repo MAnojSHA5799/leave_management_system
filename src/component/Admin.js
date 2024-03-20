@@ -15,7 +15,7 @@ function Admin() {
     console.warn({ emailadmin, passwordadmin });
     let data = { emailadmin, passwordadmin };
 
-    fetch("https://leave-management-backend-lilac.vercel.app/admin", {
+    fetch("http://localhost:5000/admin", {
       method: 'POST',
       headers: {
         'Accept': 'application/json',

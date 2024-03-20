@@ -21,7 +21,7 @@ function Login() {
     console.warn({ emailr, passwordr })
     let data = { emailr, passwordr }
 
-    fetch("https://leave-management-backend-lilac.vercel.app/datas", {
+    fetch("http://localhost:5000/datas", {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
